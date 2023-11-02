@@ -63,8 +63,6 @@ def make_move(grid, id, player, counter)
     return count
   end
 
-  # grid.spaces[id - 1].value = player.mark
-
   grid.spaces[id - 1] = Space.new(id, player.mark)
   count
 end
@@ -106,11 +104,6 @@ def game_over?(grid)
   end
 
   false
-
-  # arr.each do |space|
-  #   return false if space.value != 'X' || space.value != 'O'
-  # end
-  # true
 end
 
 counter = 1
