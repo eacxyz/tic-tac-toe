@@ -112,10 +112,14 @@ should_print = true
 while game_over?(grid) == false
   player = (counter % 2).zero? ? player2 : player1
   print 'Choose a number to mark: ' if should_print
+  should_print = false
   id = gets.chomp.to_i
+  if id < 1 || id > 9
+    print 'The number must be between 1 and 9: '
+    next
+  end
   old_count = counter
   counter = make_move(grid, id, player, counter)
-  should_print = false
   if counter == old_count
     grid.print_grid
     should_print = true
